@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+          "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+  <property name="severity" value="warning"/>
+  <module name="SuppressWarningsFilter"/>
+
+  <module name="FileLength">
+    <property name="max" value="500"/>
+  </module>
+  
+  <module name="LineLength">
+    <property name="max" value="100"/>
+  </module>
+
+  <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+  </module>
+
+  <module name="NewlineAtEndOfFile"/>
+
+  <module name="TreeWalker">
+    <module name="SuppressWarnings">
+      <property name="id" value="checkstyle:suppresswarnings"/>
+    </module> 
+    <module name="SuppressWarningsHolder"/>
+    <module name="AbbreviationAsWordInName" />
+    <module name="AbstractClassName"/>
+    <module name="AnnotationLocation">
+      <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>
+    </module>
+    <module name="AnonInnerLength">
+      <property name="max" value="0"/>
+    </module>
+    <module name="ArrayTypeStyle"/>
+    <module name="AtclauseOrder"/>
+    <module name="AvoidDoubleBraceInitialization"/>
+    <module name="AvoidEscapedUnicodeCharacters"/>
+    <module name="AvoidNestedBlocks"/>
+    <module name="AvoidNoArgumentSuperConstructorCall"/>
+    <module name="AvoidStarImport" />
+    <module name="BooleanExpressionComplexity"/>
+    <module name="CatchParameterName"/>
+    <module name="ClassTypeParameterName"/>
+    <module name="CommentsIndentation"/>
+    <module name="ConstantName"/>
+    <module name="CovariantEquals"/>
+    <module name="CustomImportOrder">
+      <property name="thirdPartyPackageRegExp" value="^com\."/>
+      <property name="separateLineBetweenGroups" value="false"/>
+      <property name="sortImportsInGroupAlphabetically" value="true"/>
+    </module>
+    <module name="CyclomaticComplexity">
+      <property name="max" value="8"/>
+    </module>
+    <module name="DeclarationOrder"/>
+    <module name="DefaultComesLast"/>
+    <module name="DescendantToken">
+      <property name="tokens" value="FOR_INIT"/>
+      <property name="limitedTokens" value="EXPR"/>
+      <property name="minimumNumber" value="1"/>
+      <property name="maximumMessage"
+        value="Must have an initializer in the FOR loop (try a while loop)."/>
+    </module>
+    <module name="DescendantToken">
+      <property name="tokens" value="FOR_CONDITION"/>
+      <property name="limitedTokens" value="EXPR"/>
+      <property name="minimumNumber" value="1"/>
+      <property name="maximumMessage"
+        value="Must have a condition in the FOR loop."/>
+    </module>
+    <module name="DescendantToken">
+      <property name="tokens" value="LITERAL_SWITCH"/>
+      <property name="limitedTokens" value="LITERAL_SWITCH"/>
+      <property name="maximumNumber" value="0"/>
+      <property name="minimumDepth" value="1"/>
+      <property name="maximumMessage"
+        value="Cannot have SWITCH in a SWITCH."/>
+    </module>
+    <module name="DescendantToken">
+      <property name="tokens" value="LITERAL_CATCH,LITERAL_FINALLY"/>
+      <property name="limitedTokens" value="LITERAL_TRY"/>
+      <property name="maximumNumber" value="0"/>
+      <property name="maximumMessage"
+        value="Cannot have TRY in a CATCH."/>
+    </module>
+    <module name="DescendantToken">
+      <property name="tokens" value="METHOD_DEF"/>
+      <property name="limitedTokens" value="VARIABLE_DEF"/>
+      <property name="maximumDepth" value="2"/>
+      <property name="maximumNumber" value="10"/>
+      <property name="maximumMessage"
+        value="Too many (>10) local variables in the method."/>
+    </module>
+    <module name="DescendantToken">
+      <property name="tokens" value="METHOD_DEF"/>
+      <property name="limitedTokens" value="EXPR"/>
+      <property name="maximumNumber" value="25"/>
+      <property name="maximumMessage"
+        value="Too many (>25) expressions in the method."/>
+    </module>
+    <module name="EmptyBlock"/>
+    <module name="EmptyCatchBlock"/>
+    <module name="EmptyLineSeparator">
+      <property name="allowNoEmptyLineBetweenFields" value="true"/>
+    </module>
+    <module name="EmptyStatement"/>
+    <module name="EqualsAvoidNull"/>
+    <module name="EqualsHashCode"/>
+    <module name="ExecutableStatementCount">
+      <property name="max" value="15"/>
+    </module>
+    <module name="ExplicitInitialization"/>
+    <module name="FallThrough"/>
+    
+    <module name="FinalClass"/>
+    <module name="FinalLocalVariable"/>
+    <module name="GenericWhitespace"/>
+    <module name="HiddenField"/>
+    <module name="HideUtilityClassConstructor"/>
+    <module name="IllegalCatch"/>
+    <module name="IllegalIdentifierName"/>
+    <module name="IllegalThrows"/>
+    <module name="IllegalToken"/>
+    <module name="IllegalTokenText">
+      <property name="tokens" value="NUM_INT,NUM_LONG"/>
+      <property name="format" value="^0[^lx]"/>
+      <property name="ignoreCase" value="true"/>
+    </module>
+    <module name="Indentation"/>
+    <module name="InnerAssignment"/>
+    <module name="InnerTypeLast"/>
+    <module name="InterfaceTypeParameterName"/>
+    <module name="InvalidJavadocPosition"/>
+    <module name="JavadocContentLocationCheck"/>
+    <module name="JavadocMethod">
+      <property name="validateThrows" value="true"/>
+    </module>
+    <module name="JavadocMissingLeadingAsterisk"/>
+    <module name="JavadocMissingWhitespaceAfterAsterisk"/>
+    <module name="JavadocParagraph"/>
+    <module name="JavadocStyle"/>
+    <module name="JavadocTagContinuationIndentation"/>
+    <module name="JavadocType"/>
+    <module name="JavaNCSS">
+      <property name="methodMaximum" value="15"/>
+      <property name="fileMaximum" value="500"/>
+    </module>
+    <module name="LambdaBodyLength">
+      <property name="max" value="0"/>
+    </module>
+    <module name="LambdaParameterName">
+      <property name="format" value="^[a-z]([a-zA-Z]+)*$"/>
+    </module>
+    <module name="LeftCurly">
+      <property name="ignoreEnums" value="false"/>
+    </module>
+    <module name="LocalFinalVariableName" />
+    <module name="LocalVariableName"/>
+    <module name="MagicNumber"/>
+    <module name="MemberName"/>
+    <module name="MethodCount">
+      <property name="maxTotal" value="20"/>
+    </module>
+    <module name="MethodLength">
+      <property name="tokens" value="METHOD_DEF"/>
+      <property name="max" value="25"/>
+    </module>
+    <module name="MethodName"/>
+    <module name="MethodParamPad"/>
+    <module name="MethodTypeParameterName"/>
+    <module name="MissingCtor"/>
+    <module name="MissingJavadocMethod">
+      <property name="scope" value="private"/>
+    </module>
+    <module name="MissingJavadocType">
+      <property name="scope" value="private"/>
+    </module>
+    <module name="MissingOverride"/>
+    <module name="MissingSwitchDefault"/>
+    <module name="ModifiedControlVariable"/>
+    <module name="ModifierOrder"/>
+    <module name="MultipleStringLiterals">
+      <property name="ignoreStringsRegexp"
+        value='^(("")|(", ")|(".*Violation of precondition: .*"))$'/>
+    </module>
+    <module name="MultipleVariableDeclarations"/>
+    <module name="MutableException"/>
+    <module name="NeedBraces"/>
+    <module name="NestedForDepth"/>
+    <module name="NestedIfDepth"/>
+    <module name="NestedTryDepth"/>
+    <module name="NoArrayTrailingComma"/>
+    <module name="NoClone"/>
+    <module name="NoCodeInFile"/>
+    <module name="NoFinalizer"/>
+    <module name="NonEmptyAtclauseDescription"/>
+    <module name="NoEnumTrailingComma"/>
+    <module name="NoWhitespaceAfter"/>
+    <module name="NoWhitespaceBefore"/>
+    <module name="NoWhitespaceBeforeCaseDefaultColon"/>
+    <module name="NPathComplexity">
+      <property name="max" value="100"/>
+    </module>
+    <module name="OneStatementPerLine"/>
+    <module name="OneTopLevelClass"/>
+    <module name="OperatorWrap"/>
+    <module name="OuterTypeFilename"/>
+    <module name="OuterTypeNumber"/>
+    <module name="OverloadMethodsDeclarationOrder"/>
+    <module name="ParameterAssignment"/>
+    <module name="ParameterName"/>
+    <module name="ParameterNumber">
+      <property name="max" value="4"/>
+    </module>
+    <module name="ParenPad"/>
+    <module name="PatternVariableName"/>
+    <module name="RecordComponentName"/>
+    <module name="RecordTypeParameterName"/>
+    <module name="RedundantImport"/>
+    <module name="RedundantModifier"/>
+    <module name="Regexp">
+      <property name="format" value="UTEID: \w{1,3}\d{1,5}"/>
+      <property name="message" value="Make sure you have your header comment with your UTEID!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Nn]ame: (.+)"/>
+      <property name="message" value="Make sure you have your header comment with your name!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Ss]ection 5 [Dd]igit [Ii][Dd]: \d{5}"/>
+      <property name="message" value="Make sure you have your header comment with your section number!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Ee]mail( [Aa]ddress)?: (.)+@utexas.edu"/>
+      <property name="message" value="Make sure you have your header comment with your UTexas.edu email!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Ee]mail( [Aa]ddress)?: (.)+@utexas.edu"/>
+      <property name="message" value="Make sure you have your header comment with your UTexas.edu email!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Gg]rader(('?s)? [Nn]ame)?: (.+)"/>
+      <property name="message" value="Make sure you have your header comment with your grader's name!" />
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[Nn]umber( [Oo]f)? [Ss]lip [Dd]ays [Uu]sed [Oo]n( [Tt]his)? [Aa]ssignment: \d"/>
+      <property name="message" value="Make sure you have your header comment with the number of slip days used!" />
+    </module>
+    <module name="RequireThis">
+      <property name="validateOnlyOverlapping" value="false"/>
+    </module>
+    <module name="ReturnCount">
+      <property name="maxForVoid" value="0"/>
+    </module>
+    <module name="ReturnCount">
+      <property name="max" value="2"/>
+    </module>
+    <module name="RightCurly"/>
+    <module name="SeparatorWrap"/>
+    <module name="SimplifyBooleanExpression"/>
+    <module name="SimplifyBooleanReturn"/>
+    <module name="SingleLineJavadoc"/>
+    <module name="RequireEmptyLineBeforeBlockTagGroup"/>
+    <module name="SingleSpaceSeparator"/>
+    <module name="StaticVariableName"/>
+    <module name="StringLiteralEquality"/>
+    <module name="SummaryJavadocCheck">
+      <property name="forbiddenSummaryFragments"
+        value="^[Tt]his method.*"/>
+    </module>
+    <module name="SuperClone"/>
+    <module name="SuperFinalize"/>
+    <module name="ThrowsCount">
+      <property name="ignorePrivateMethods" value="false"/>
+      <property name="max" value="2"/>
+    </module>
+    <module name="TodoComment">
+      <property name="format" value="(TODO|todo|FIXME|fixme)"/>
+    </module>
+    <module name="TrailingComment"/>
+    <module name="TypecastParenPad"/>
+    <module name="TypeName"/>
+    <module name="UnnecessaryParentheses"/>
+    <module name="UnnecessarySemicolonInEnumeration"/>
+    <module name="UnnecessarySemicolonInTryWithResources"/>
+    <module name="UnnecessarySemicolonAfterOuterTypeDeclaration"/>
+    <module name="UnnecessarySemicolonAfterTypeMemberDeclaration"/>
+    <module name="UnusedImports"/>
+    <module name="UpperEll"/>
+    <module name="VariableDeclarationUsageDistance"/>
+    <module name="WhitespaceAfter"/>
+    <module name="WhitespaceAround"/>
+  </module>
+</module>
