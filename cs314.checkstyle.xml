@@ -166,6 +166,7 @@
     <module name="MethodLength">
       <property name="tokens" value="METHOD_DEF"/>
       <property name="max" value="25"/>
+      <property name="countEmpty" value="false"/>
     </module>
     <module name="MethodName"/>
     <module name="MethodParamPad"/>
@@ -231,10 +232,6 @@
     <module name="Regexp">
       <property name="format" value="[Ss]ection 5 [Dd]igit [Ii][Dd]: \d{5}"/>
       <property name="message" value="Make sure you have your header comment with your section number!" />
-    </module>
-    <module name="Regexp">
-      <property name="format" value="[Ee]mail( [Aa]ddress)?: (.)+@utexas.edu"/>
-      <property name="message" value="Make sure you have your header comment with your UTexas.edu email!" />
     </module>
     <module name="Regexp">
       <property name="format" value="[Ee]mail( [Aa]ddress)?: (.)+@utexas.edu"/>
